@@ -44,7 +44,7 @@ import java.util.ArrayList;
 import  java.util.Collection;
 import  java.util.Iterator;
 public class Main  {
-    static void main(String[] args) {
+    static void main(String[] args) throws Exception {
         ArrayList<String> man = new ArrayList<>();
         man.add("what");
         man.add("can");
