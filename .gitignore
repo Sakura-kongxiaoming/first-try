@@ -28,3 +28,4 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/src/词典.txt
