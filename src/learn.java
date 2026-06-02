@@ -4,13 +4,14 @@ void main() throws Exception {
 
     ArrayList<String> JP = new ArrayList<>();
     ArrayList<String> CN = new ArrayList<>();
-    File file = new File("src/词典.txt");
-    if (file.exists()) {
+
+    File file = new File("src/词典.txt");     //创建file用来读取本地字典
+    if (file.exists()) {        //判读是否存在
         Scanner dq = new Scanner(file);
         while (dq.hasNextLine()) {
             String line = dq.nextLine();
-            String[] parts = line.split("=");
-            if (parts.length >= 2) {
+            String[] parts = line.split("=");      //创建集合来读取整个文本内容，split(分隔)，表示使用“=”进行分隔了//
+            if (parts.length >= 1) {                     //判断长度然后进行赋值，由于0=日文，1=中文；
                 JP.add(parts[0]);
                 CN.add(parts[1]);
             }
@@ -87,10 +88,10 @@ void main() throws Exception {
                 }
             }
         } else if (number == 0) {
-            FileWriter fw = new FileWriter("词典.txt");
+            FileWriter fw = new FileWriter("词典.txt");       //创建变量并写入词典中
             for (String l : JP) {
-                fw.write(l + "=" + CN.get(number) + "\n");
-                number++;
+                fw.write(l + "=" + CN.get(number) + "\n");        //l=它在JP的索引对应值，再加上CN中相同索引对应的值进行换行输出
+                number++;                                             //索引自增避免一直是同一个索引
             }
             fw.close();
             IO.print("保存成功，程序退出");
