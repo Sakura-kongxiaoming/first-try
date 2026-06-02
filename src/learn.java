@@ -4,7 +4,7 @@ void main() throws Exception {
 
     ArrayList<String> JP = new ArrayList<>();
     ArrayList<String> CN = new ArrayList<>();
-    File file = new File("词典.txt");
+    File file = new File("src/词典.txt");
     if (file.exists()) {
         Scanner dq = new Scanner(file);
         while (dq.hasNextLine()) {
